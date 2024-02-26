@@ -16,7 +16,7 @@ import {
 } from "firebase/storage";
 import styles from "../../styles/styles";
 
-const ENDPOINT = "http://localhost:4001/";
+const ENDPOINT = "https://ecommerce-socket-gwih.onrender.com/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const ShopMessages = () => {

@@ -17,7 +17,7 @@ import {
 } from "firebase/storage";
 import Header from "../components/layout/Header";
 
-const ENDPOINT = "http://localhost:4001/";
+const ENDPOINT = "https://ecommerce-socket-gwih.onrender.com/";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const UserInboxPage = () => {
