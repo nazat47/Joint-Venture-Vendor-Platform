@@ -55,14 +55,14 @@ const ProductCard = ({ product }) => {
     <>
       <div className="w-full h-[370px] bg-white rounded-lg shadow-md p-5 relative cursor-pointer mt-12 800px:mt-0">
         <div className="flex justify-end "></div>
-        <Link to={`/product/${product._id}`}>
+        <Link to={`/product/preview/${product._id}`}>
           <img
             src={product.images}
             alt="product"
             className="w-[90%] h-[170px] object-contain"
           ></img>
         </Link>
-        <Link to={`/shop/${product.shop._id}`}>
+        <Link to={`/shop/preview/${product.shop._id}`}>
           <h5 className={`${styles.shop_name}`}>Seller: {product.shop.name}</h5>
         </Link>
         <Link to={`/product/${product._id}`}>
