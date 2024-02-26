@@ -78,7 +78,7 @@ const Header = ({ activeHeading }) => {
               size={25}
               className="absolute right-2 top-1.5 cursor-pointer"
             />
-            {searchData && searchData.length > 0 ? (
+            {searchData && searchData?.length > 0 ? (
               <div className="absolute min-h-[30vh] bg-slate-50 shadow-md z-[9] p-4">
                 {searchData?.map((item, i) => {
                   return (
@@ -220,7 +220,7 @@ const Header = ({ activeHeading }) => {
             >
               <AiOutlineShoppingCart size={30} />
               <span className="absolute top-0 right-0 rounded-full bg-blue-400 w-4 h-4 p-0 m-0 text-white font-mono text-sm leading-tight text-center cursor-pointer">
-                {cart.length}
+                {cart?.length}
               </span>
             </div>
             {openCart && <Cart setOpenCart={setOpenCart} />}
@@ -258,7 +258,7 @@ const Header = ({ activeHeading }) => {
                 />
                 {searchData && (
                   <div className="absolute max-h-screen bg-slate-50 shadow-md z-[9] p-4 w-full left-0">
-                    {searchData && searchData.length > 0 ? (
+                    {searchData && searchData?.length > 0 ? (
                       <div className="absolute min-h-[30vh] bg-slate-50 shadow-md z-[9] p-4">
                         {searchData?.map((item, i) => {
                           return (

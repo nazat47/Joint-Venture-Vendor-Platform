@@ -33,7 +33,7 @@ const Events = () => {
   }, []);
   return (
     <div className="mt-12">
-      {allEvents.length > 0 && (
+      {allEvents?.length > 0 && (
         <div className={`${styles.section}`}>
           <div className={`${styles.heading}`}>
             <h1>Popular Events</h1>
