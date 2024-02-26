@@ -348,7 +348,7 @@ const MessageList = ({
         <p className="text-[15px] text-gray-700">
           {convo?.lastMessageId !== user?._id
             ? "You"
-            : user.username.split(" ")[0]}
+            : user?.username?.split(" ")[0]}
           {": " + convo?.lastMessage}
         </p>
       </div>
