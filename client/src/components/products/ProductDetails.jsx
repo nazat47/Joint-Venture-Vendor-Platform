@@ -80,7 +80,7 @@ const ProductDetails = ({ product }) => {
         if (data.msg) {
           toast.error(data.msg);
         } else {
-          navigate(`/inbox?${data._id}`);
+          navigate(`/inbox`);
         }
       } else {
         toast.error("Please login to create conversation");
