@@ -5,7 +5,7 @@ import ProductCard from "../product-card/ProductCard";
 
 const FeaturedProducts = () => {
   const { allProducts } = useSelector((state) => state.product);
-  const sortProd=allProducts.slice(0,5)
+  const sortProd=allProducts?.slice(0,5)
   return (
     <div className="mt-12">
       <div className={`${styles.section}`}>

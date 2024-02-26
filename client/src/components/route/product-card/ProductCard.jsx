@@ -68,7 +68,7 @@ const ProductCard = ({ product }) => {
         <Link to={`/product/${product._id}`}>
           <h4 className="font-semibold">
             {product.name.length > 40
-              ? product.name.slice(0, 40) + "..."
+              ? product.name?.slice(0, 40) + "..."
               : product.name}
           </h4>
           <div className="flex my-1">

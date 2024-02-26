@@ -36,7 +36,7 @@ const Header = ({ activeHeading }) => {
     const filteredProducts =
       allProducts &&
       allProducts?.filter((product) =>
-        product.name.toLowerCase().includes(term.toLowerCase())
+        product.name?.toLowerCase().includes(term.toLowerCase())
       );
     setSearchData(filteredProducts);
   };
@@ -238,7 +238,7 @@ const Header = ({ activeHeading }) => {
                   >
                     <AiOutlineHeart size={30} />
                     <span className="absolute top-0 right-0 rounded-full bg-blue-400 w-4 h-4 p-0 m-0 text-white font-mono text-sm leading-tight text-center">
-                      {wish.length}
+                      {wish?.length}
                     </span>
                   </div>
                 </div>
@@ -265,11 +265,11 @@ const Header = ({ activeHeading }) => {
                             <Link to={`/product/${item._id}`}>
                               <div className="w-full flex items-start py-3">
                                 <img
-                                  src={item.images[0]}
+                                  src={item?.images[0]}
                                   alt="items"
                                   className="w-[40px] h-[40px] mr-[10px]"
                                 ></img>
-                                <h1>{item.name}</h1>
+                                <h1>{item?.name}</h1>
                               </div>
                             </Link>
                           );
@@ -311,7 +311,7 @@ const Header = ({ activeHeading }) => {
                   <div>
                     <Link to="/profile">
                       <img
-                        src={currentUser.avatar}
+                        src={currentUser?.avatar}
                         className="w-[70px] h-[70px] rounded-full border-[2px] border-slate-600"
                         alt="user"
                       />

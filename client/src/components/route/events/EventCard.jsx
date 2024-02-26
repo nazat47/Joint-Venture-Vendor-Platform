@@ -27,12 +27,12 @@ const EventCard = ({ active, product }) => {
       } bg-white lg:flex p-2 shadow-md`}
     >
       <div className="w-full lg:w-[50%] m-auto">
-        <Link to={`/product/${product._id}?isEvent=true`}>
+        <Link to={`/product/${product?._id}?isEvent=true`}>
           <img src={product.images[0]} alt="item" className="h-[300px] w-[500px]"/>
         </Link>
       </div>
       <div className="w-full lg:w-[50%] flex flex-col justify-center">
-        <Link to={`/product/${product._id}?isEvent=true`}>
+        <Link to={`/product/${product?._id}?isEvent=true`}>
           <h2 className={`${styles.productTitle} mb-6`}>{product.name}</h2>
         </Link>
         <p>{product.description}</p>
@@ -40,13 +40,13 @@ const EventCard = ({ active, product }) => {
           <div className="flex">
             {product.originalPrice ? (
               <h5 className="font-[500] text-lg text-red-600 pr-3 line-through">
-                {product.originalPrice}$
+                {product?.originalPrice}$
               </h5>
             ) : (
               ""
             )}
             <h5 className="font-bold text-lg text-[#333] font-Roboto">
-              {product.discountPrice}$
+              {product?.discountPrice}$
             </h5>
           </div>
           <span className="pr-3 font-semibold text-lg text-[#44a55e]">

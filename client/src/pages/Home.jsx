@@ -33,9 +33,9 @@ const Home = () => {
           const { data } = await axios.get(
             `${REACT_APP_BASE_URL}/product/getAllProducts`
           );
-          if (data.msg) {
-            dispatch(ProductFailure(data.msg));
-            toast.error(data.msg);
+          if (data?.msg) {
+            dispatch(ProductFailure(data?.msg));
+            toast.error(data?.msg);
           }
           dispatch(getAllProducts(data));
         } catch (error) {

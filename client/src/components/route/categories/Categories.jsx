@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Categories = () => {
   const navigate = useNavigate();
   const handleSubmit = (cat) => {
-    navigate(`/products?category=${cat.title}`);
+    navigate(`/products?category=${cat?.title}`);
   };
   return (
     <>

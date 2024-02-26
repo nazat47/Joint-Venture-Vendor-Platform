@@ -20,8 +20,8 @@ const Events = () => {
         dispatch(EventRequest());
         const { data } = await axios.get(`${REACT_APP_BASE_URL}/event/getAll`);
         if (data.msg) {
-          dispatch(EventFailure(data.msg));
-          toast.error(data.msg);
+          dispatch(EventFailure(data?.msg));
+          toast.error(data?.msg);
         }
         dispatch(getAllEvents(data));
       } catch (error) {
