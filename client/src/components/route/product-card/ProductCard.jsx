@@ -55,7 +55,7 @@ const ProductCard = ({ product }) => {
     <>
       <div className="w-full h-[370px] bg-white rounded-lg shadow-md p-5 relative cursor-pointer mt-12 800px:mt-0">
         <div className="flex justify-end "></div>
-        <Link to={`/product/preview/${product._id}`}>
+        <Link to={`/product/${product._id}`}>
           <img
             src={product.images}
             alt="product"
