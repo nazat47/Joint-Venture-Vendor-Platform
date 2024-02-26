@@ -15,10 +15,10 @@ const attachCookies = (res, user) => {
   const token = createToken(user);
   res.cookie("token", token, {
     httpOnly: true,
-    secure: true,
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
     sameSite:'strict',
     signed:true,
+    secure: true,
   });
 };
 const attachShopCookies = (res, user) => {

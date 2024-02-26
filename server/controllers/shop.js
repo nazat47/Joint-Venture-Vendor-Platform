@@ -27,7 +27,7 @@ const createShop = async (req, res) => {
 
     const tokenUser = createTokenShop(create);
     const activation = activateAccount(tokenUser);
-    const activationUrl = `http://localhost:3000/seller/activation/${activation}`;
+    const activationUrl = `https://joint-venture-vendor-platform.vercel.app/seller/activation/${activation}`;
     try {
       await sendMail({
         email: create.email,
