@@ -95,7 +95,7 @@ const ProductDetails = ({ product }) => {
       try {
         dispatch(ProductRequest());
         const { data } = await axios.get(
-          `${REACT_APP_BASE_URL}/product/getAll/${product.shop._id}`
+          `${REACT_APP_BASE_URL}/product/getAll/${product.shop?._id}`
         );
         if (data.msg) {
           dispatch(ProductFailure(data.msg));
@@ -201,9 +201,9 @@ const ProductDetails = ({ product }) => {
                   </span>
                 </div>
                 <div className="flex items-center pt-8">
-                  <Link to={`/shop/preview/${product.shop._id}`}>
+                  <Link to={`/shop/preview/${product.shop?._id}`}>
                     <img
-                      src={product.shop.avatar}
+                      src={product.shop?.avatar}
                       alt=""
                       className="w-[50px] h-[50px] rounded-full mr-2"
                     />
@@ -211,7 +211,7 @@ const ProductDetails = ({ product }) => {
                   <div className="pr-8">
                     <Link to={`/shop/preview/${product.shop._id}`}>
                       <h3 className={`${styles.shop_name} pt-1 pb-1`}>
-                        {product.shop.name}
+                        {product.shop?.name}
                       </h3>
                     </Link>
                     <h5 className="pb-3 text-md">

@@ -76,17 +76,17 @@ const ProductDetails = ({ setOpen, product }) => {
                 <img src={product.images} alt="product" />
                 <div className="flex">
                   <img
-                    src={product.shop.avatar}
+                    src={product.shop?.avatar}
                     alt="shop"
                     className="w-[50px] h-[50px] rounded-full m-4"
                   />
                   <div className="">
                     <h3 className={`${styles.shop_name}`}>
-                      {product.shop.name}
+                      {product.shop?.name}
                     </h3>
                     <h5 className="pb-3 text-[15px]">
                       {" "}
-                      ({product.shop.ratings}) Ratings
+                      ({product.shop?.ratings}) Ratings
                     </h5>
                   </div>
                 </div>

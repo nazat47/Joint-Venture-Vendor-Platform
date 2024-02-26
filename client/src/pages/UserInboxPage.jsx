@@ -59,7 +59,7 @@ const UserInboxPage = () => {
           `${REACT_APP_BASE_URL}/conversation/getAll/${currentUser?._id}`
         );
         if (data.msg) {
-          toast.error(data.msg);
+          toast.error(data?.msg);
         } else {
           setConversation(data);
         }
@@ -346,7 +346,7 @@ const MessageList = ({
         <p className="text-[15px] text-gray-700">
           {convo?.lastMessageId !== userData?._id
             ? "You"
-            : userData.name.split(" ")[0]}
+            : userData?.name.split(" ")[0]}
           {": " + convo?.lastMessage}
         </p>
       </div>
