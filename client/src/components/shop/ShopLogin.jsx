@@ -30,8 +30,8 @@ const ShopLogin = () => {
       dispatch(signInSuccess(res.data));
       navigate("/dashboard");
     } catch (error) {
-      signInFailure(error.response.data.msg);
-      toast.error(error.response.data.msg);
+      signInFailure(error.message);
+      toast.error(error.response.data?.msg);
     }
 
     // .then((res) => {

@@ -6,15 +6,11 @@ export const SellerProtected = ({ children }) => {
   const { isAuthenticated, currentShop, loading } = useSelector(
     (state) => state.shop
   );
-  
-  if (loading) {
-    return <Loader />;
-  } else {
-    if (!isAuthenticated) {
-      return <Navigate to="/login-shop" replace />;
-    } else if (currentShop.role !== "seller") {
-      return <Navigate to="/" replace />;
-    }
-    return children;
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login-shop" replace />;
+  } else if (currentShop.role !== "seller") {
+    return <Navigate to="/" replace />;
   }
+  return children;
 };

@@ -26,13 +26,12 @@ const ShopInfo = ({ isOwner }) => {
     dispatch(signInStart());
     try {
       const res = await axios.get(`${REACT_APP_BASE_URL}/shop/logout`);
-      if (res.data.message) {
+      if (res.data?.message) {
         dispatch(signOutSuccess());
-        window.location.reload(true);
         navigate("/login-shop");
       }
     } catch (error) {
-      dispatch(signInFailure(error.response.data.msg));
+      dispatch(signInFailure(error.message));
     }
   };
 

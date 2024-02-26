@@ -45,8 +45,8 @@ const ShopCreate = () => {
     await axios
       .post(`${REACT_APP_BASE_URL}/shop/create`, newForm, config)
       .then((res) => {
-        if (res.data.message) {
-          toast.success(res.data.message);
+        if (res.data?.message) {
+          toast.success(res.data?.message);
           setName("");
           setEmail("");
           setAvatar("");
@@ -58,8 +58,8 @@ const ShopCreate = () => {
       })
       .catch((err) => {
         setError(true);
-        setErrMsg(err.response.data.msg);
-        toast.error(err.response.data.msg);
+        setErrMsg(err.message);
+        //toast.error(err.response.data.msg);
       });
   };
   const handleFileInput = (e) => {
