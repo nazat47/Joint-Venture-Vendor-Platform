@@ -136,7 +136,7 @@ const UserOrderDetails = () => {
                 <img
                   src={`${data.images[0]}`}
                   alt=""
-                  className="w-[18px] h-[18px]"
+                  className="w-[100px] h-[100px]"
                 />
                 <div className="w-full">
                   <h5 className="pl-3 text-lg">{data.name}</h5>

@@ -11,7 +11,6 @@ const Products = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const categoryData = searchParams.get("category");
-  console.log(categoryData);
   const [data, setData] = useState([]);
   useEffect(() => {
     const allProdData = [...allProducts];
