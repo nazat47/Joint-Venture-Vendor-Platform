@@ -56,7 +56,6 @@ const deleteProduct = async (req, res) => {
 const reviewProduct = async (req, res) => {
   try {
     const { user, rating, message, productId, userId, orderId } = req.body;
-    console.log(productId)
     const product = await Product.findById(productId);
     if (!product) {
       throw new NotFound("Product not found");
@@ -85,10 +84,4 @@ const reviewProduct = async (req, res) => {
   }
 };
 
-module.exports = {
-  reviewProduct,
-  getAllProducts,
-  createProduct,
-  getProducts,
-  deleteProduct,
-};
+

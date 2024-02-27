@@ -145,14 +145,14 @@ const UserOrderDetails = () => {
                   </h5>
                 </div>
 
-                {data.isReviewed ? null : (
+                {!data.isReviewed && order.status === "Delivered" ? (
                   <div
                     onClick={() => setOpen(true) || setSelectedItem(data)}
                     className={`${styles.button} text-white`}
                   >
                     Write a review
                   </div>
-                )}
+                ) : null}
               </div>
             ))}
           {open && (
