@@ -32,6 +32,9 @@ const UserInboxPage = () => {
   const [userData, setUserData] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [activeStatus, setActiveStatus] = useState(false);
+  const searchParam = new URLSearchParams(window.location.search);
+  const inboxSearch = searchParam.get("id");
+  console.log(inboxSearch);
   const [images, setImages] = useState();
   const scrollRef = useRef(null);
   useEffect(() => {
@@ -52,6 +55,27 @@ const UserInboxPage = () => {
       currentChat?.members.includes(arrivalMessage.sender) &&
       setMessages((prev) => [...prev, arrivalMessage]);
   }, [arrivalMessage, currentChat]);
+  useEffect(() => {
+    const getAll = async () => {
+      if (inboxSearch) {
+        try {
+          const { data } = await axios.get(
+            `${REACT_APP_BASE_URL}/conversation/getSpecificConvo/${inboxSearch}`
+          );
+          if (data.msg) {
+            toast.error(data?.msg);
+          } else {
+            setCurrentChat(data);
+            setOpen(true);
+          }
+        } catch (error) {
+          toast.error(error.response?.data?.msg);
+          console.log(error);
+        }
+      }
+    };
+    getAll();
+  }, []);
   useEffect(() => {
     const getAll = async () => {
       try {
@@ -299,7 +323,7 @@ const MessageList = ({
   const [user, setUser] = useState([]);
   const navigate = useNavigate();
   const handleClick = (id) => {
-    navigate(`?${id}`);
+    navigate(`?id=${id}`);
     setOpen(true);
   };
   useEffect(() => {

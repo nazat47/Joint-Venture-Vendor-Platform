@@ -66,7 +66,7 @@ const ProductDetails = ({ product }) => {
   const handleMsgSubmit = async () => {
     try {
       if (isAuthenticated) {
-        const groupTitle = currentUser?._id + product?._id;
+        const groupTitle = currentUser?._id + product?.shop?._id;
         const shopId = product?.shop?._id;
         const userId = currentUser?._id;
         const { data } = await axios.post(
@@ -80,7 +80,7 @@ const ProductDetails = ({ product }) => {
         if (data.msg) {
           toast.error(data.msg);
         } else {
-          navigate(`/inbox`);
+          navigate(`/inbox?id=${data._id}`);
         }
       } else {
         toast.error("Please login to create conversation");

@@ -84,4 +84,10 @@ const reviewProduct = async (req, res) => {
   }
 };
 
-
+module.exports = {
+  reviewProduct,
+  getAllProducts,
+  createProduct,
+  getProducts,
+  deleteProduct,
+};

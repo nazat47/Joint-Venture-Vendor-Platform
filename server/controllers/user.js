@@ -17,22 +17,10 @@ const createUser = async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-    // const userExists = await User.findOne({ email });
-    // if (!req.file) {
-    //   throw new BadRequest("Please insert picture");
-    // }
-    // const filename = req.file.filename;
-    // if (userExists) {
-    //   const filePath = `uploads/${filename}`;
-    //   fs.unlink(filePath, (err) => {
-    //     if (err) {
-    //       console.log(err);
-    //       res.status(500).json({ msg: "error deleting file" });
-    //     }
-    //   });
-    //   throw new BadRequest("Account already exists");
-    // }
-    // const fileUrl = path.join(filename);
+    const userExists = await User.findOne({ email });
+    if (userExists) {
+      throw new BadRequest("Account already exists");
+    }
     const create = {
       username: name,
       email: email,
