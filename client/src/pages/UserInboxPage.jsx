@@ -34,7 +34,7 @@ const UserInboxPage = () => {
   const [activeStatus, setActiveStatus] = useState(false);
   const searchParam = new URLSearchParams(window.location.search);
   const inboxSearch = searchParam.get("id");
-  console.log(inboxSearch);
+  console.log(inboxSearch)
   const [images, setImages] = useState();
   const scrollRef = useRef(null);
   useEffect(() => {
@@ -66,7 +66,7 @@ const UserInboxPage = () => {
             toast.error(data?.msg);
           } else {
             setCurrentChat(data);
-            setOpen(true);
+            setOpen(true)
           }
         } catch (error) {
           toast.error(error.response?.data?.msg);

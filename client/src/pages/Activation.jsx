@@ -13,7 +13,7 @@ const Activation = () => {
       const activationEmail = async () => {
         try {
           const res = await axios.post(
-            `${REACT_APP_BASE_URL}/users//activation`,
+            `${REACT_APP_BASE_URL}/users/activation`,
             { token }
           );
           setTimeout(() => {
